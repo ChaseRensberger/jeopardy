@@ -27,6 +27,7 @@ const Home = () => {
 				{round_one_categories.map((category) => (
 					<QuestionCard category={category} />
 				))}
+				{/* Generate Questions */}
 			</div>
 		</div>
 	);
