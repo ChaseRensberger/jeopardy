@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 const QuestionCard = (props: any) => {
 	const [isVisible, setIsVisible] = useState(true);
 	useEffect(() => {
-		setIsVisible(sessionStorage.getItem(props.question) == null ? true : false);
+		setIsVisible(localStorage.getItem(props.question) == null ? true : false);
 	}, []);
 
 	return (

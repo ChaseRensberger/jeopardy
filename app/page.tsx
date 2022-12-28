@@ -172,8 +172,8 @@ const Home = () => {
 						href="/question"
 						as="/question"
 						onClick={() => {
-							sessionStorage.setItem('currentQuestion', question.question);
-							sessionStorage.setItem(question.question, 'beenUsed');
+							localStorage.setItem('currentQuestion', question.question);
+							localStorage.setItem(question.question, 'beenUsed');
 						}}
 					>
 						<QuestionCard question={question.question} price={question.price} />
