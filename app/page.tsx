@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import QuestionCard from '../components/QuestionCard';
+import Link from 'next/link';
 
 const Home = () => {
 	const round_one_categories = [
@@ -12,7 +13,7 @@ const Home = () => {
 		'LITERATURE',
 		'AN ALBUM COVER',
 	];
-	const round_one_questions = [
+	const [round_one_questions, set_round_one_questions] = useState([
 		{
 			price: 200,
 			question:
@@ -156,7 +157,7 @@ const Home = () => {
 			question:
 				'The cover of her 1995 album "Post" represents postcards home to Iceland; she even has airmail-color trim on her jacket',
 		},
-	];
+	]);
 
 	return (
 		<div>
@@ -167,7 +168,16 @@ const Home = () => {
 				))}
 				{/* Generate Questions */}
 				{round_one_questions.map((question) => (
-					<QuestionCard question={question.question} price={question.price} />
+					<Link
+						href="/question"
+						as="/question"
+						onClick={() => {
+							localStorage.setItem('currentQuestion', question.question);
+							localStorage.setItem(question.question, 'beenUsed');
+						}}
+					>
+						<QuestionCard question={question.question} price={question.price} />
+					</Link>
 				))}
 			</div>
 		</div>

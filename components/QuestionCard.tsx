@@ -1,23 +1,26 @@
 'use client';
-import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const QuestionCard = (props: any) => {
-	const [isUsed, setIsUsed] = useState(false);
+	const [isVisible, setIsVisible] = useState(true);
+	useEffect(() => {
+		setIsVisible(localStorage.getItem(props.question) == null ? true : false);
+	}, []);
 
 	return (
-		<Link
-			href="/question"
-			as="/question"
-			onClick={() => {
-				localStorage.setItem('currentQuestion', props?.question);
-			}}
-		>
-			<div className="bg-blue-700 h-32 flex items-center justify-center font-bold text-center">
-				<div className="text-white">{props?.category}</div>
-				<div className="text-orange-400 text-3xl">{props?.price}</div>
-			</div>
-		</Link>
+		<>
+			{isVisible ? (
+				<div className="bg-blue-700 h-32 flex items-center justify-center font-bold text-center">
+					<div className="text-white">{props?.category}</div>
+					<div className="text-orange-400 text-3xl">{props?.price}</div>
+				</div>
+			) : (
+				<div className="bg-black h-32 flex items-center justify-center font-bold text-center">
+					<div className="text-white">{props?.category}</div>
+					<div className="text-black text-3xl">{props?.price}</div>
+				</div>
+			)}
+		</>
 	);
 };
 
