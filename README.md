@@ -7,3 +7,7 @@ Currently you can edit the questions by changing some variables in the root `pag
 There are also some extra components and stuff that are not being used cause I was messing around with some other libraries and then last minute converted this into a jeopardy clone.
 
 It also is storing question visbility in session storage so you'll need to close your tab and reopen the application to display all questions again.
+
+[Live Demo](jeopardy-three.vercel.app)
+
+Can run locally with `npm install` and `npm run dev`
