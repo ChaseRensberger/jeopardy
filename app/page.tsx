@@ -13,7 +13,7 @@ const Home = () => {
 		'LITERATURE',
 		'AN ALBUM COVER',
 	];
-	const [round_one_questions, set_round_one_questions] = useState([
+	const round_one_questions = [
 		{
 			price: 200,
 			question:
@@ -157,7 +157,7 @@ const Home = () => {
 			question:
 				'The cover of her 1995 album "Post" represents postcards home to Iceland; she even has airmail-color trim on her jacket',
 		},
-	]);
+	];
 
 	return (
 		<div>
