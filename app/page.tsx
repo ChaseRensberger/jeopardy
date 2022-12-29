@@ -32,7 +32,6 @@ const Home = () => {
 		setRoundTwoQuestions(updatedRoundTwoQuestions);
 	}, []);
 
-	// list of value question objects
 	const round = 1;
 	return (
 		<div>
