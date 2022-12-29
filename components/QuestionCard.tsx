@@ -12,12 +12,12 @@ const QuestionCard = (props: any) => {
 			{isVisible ? (
 				<div className="bg-blue-700 h-32 flex items-center justify-center font-bold text-center">
 					<div className="text-white">{props?.category}</div>
-					<div className="text-orange-400 text-3xl">{props?.price}</div>
+					<div className="text-orange-400 text-3xl">{props?.value}</div>
 				</div>
 			) : (
 				<div className="bg-black h-32 flex items-center justify-center font-bold text-center">
 					<div className="text-white">{props?.category}</div>
-					<div className="text-black text-3xl">{props?.price}</div>
+					<div className="text-black text-3xl">{props?.value}</div>
 				</div>
 			)}
 		</>
