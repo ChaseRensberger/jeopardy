@@ -32,7 +32,7 @@ const Home = () => {
 		setRoundTwoQuestions(updatedRoundTwoQuestions);
 	}, []);
 
-	const round = 1;
+	const round = 2;
 	return (
 		<div>
 			<div className="grid grid-cols-6 gap-4 bg-black">
